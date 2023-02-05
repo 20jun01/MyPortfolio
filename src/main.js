@@ -2,7 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import router from './router'
-import './assets/style/text_anim.css'
+import jQuery from 'jquery'
+global.jquery = jQuery
+global.$ = jQuery
+window.$ = window.jQuery = require('jquery')
 
 Vue.config.productionTip = false
 
