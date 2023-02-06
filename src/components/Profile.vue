@@ -11,14 +11,17 @@
           <p class="hero-text xyz-nested">I contributed to the following projects as a programmer.</p>
         </div>
         <v-row no-gutters>
-          <v-col cols="12" sm="4" class="page-wrap">
+          <v-col cols="4" sm="4" class="page-wrap">
             <div class="xyz-nested" xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
               <Card url="https://20jun01.github.io/topublish/" />
             </div>
+          </v-col>
+          <v-col cols="4" sm="4" class="page-wrap">
             <div class="xyz-nested"  xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
               <Card url="https://mushikui.trasta.dev/" />
             </div>
-
+          </v-col>
+            <v-col cols="4" sm="4" class="page-wrap">
             <div class="xyz-nested"  xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
               <Card url="https://sample-front-weld.vercel.app/" />
             </div>
