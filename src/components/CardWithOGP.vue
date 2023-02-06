@@ -1,9 +1,9 @@
 <template>
     <div>
-        <v-card>
-            <v-img :src="image" height="200px"></v-img>
-            <v-card-title>{{ title }}</v-card-title>
-            <v-card-subtitle>{{ description }}</v-card-subtitle>
+        <v-card hover :href=url height="400" width="400" v-if=url>
+            <v-img :src="image" :width="400" :aspect-ratio="16/9" v-if=image></v-img>
+            <v-card-title v-if=title>{{ title }}</v-card-title>
+            <v-card-subtitle v-if=description>{{ description }}</v-card-subtitle>
         </v-card>
     </div>
 </template>
@@ -33,7 +33,6 @@ export default {
                 Array.from(headEls).map(v => {
                     const prop = v.getAttribute('property')
                     if (!prop) return;
-                    console.log(prop, v.getAttribute("content"))
                     if (prop === 'og:title') {
                         this.title = v.getAttribute("content")
                     } else if (prop === 'og:description') {
