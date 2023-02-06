@@ -1,7 +1,7 @@
 <template>
     <div>
-        <v-card hover :href=url height="400" width="400" v-if=url>
-            <v-img :src="image" :width="400" :aspect-ratio="16/9" v-if=image></v-img>
+        <v-card hover :href=url v-if=url>
+            <v-img :src="image" :aspect-ratio="16/9" v-if=image></v-img>
             <v-card-title v-if=title>{{ title }}</v-card-title>
             <v-card-subtitle v-if=description>{{ description }}</v-card-subtitle>
         </v-card>
