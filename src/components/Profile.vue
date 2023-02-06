@@ -1,28 +1,30 @@
 <template>
   <v-container>
     <XyzTransition appear duration="auto">
-      <v-row no-gutters>
-        <v-col cols="12" sm="4" class="page-wrap">
-          <div class="page-hero" xyz="fade small stagger ease-out-back">
-            <v-avatar class="xyz-nested">
-              <img src="https://avatars.githubusercontent.com/u/56793204?s=96&v=4" alt="Urturn">
-            </v-avatar>
-            <p class="hero-text xyz-nested">Hi! I'm urturn. Student of Titech.</p>
-          </div>
-          <div class="page-features" xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
-            <Card class="xyz-nested" url="https://20jun01.github.io/topublish/" />
-          </div>
-          <div class="page-section" xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
-            <Card class="xyz-nested" url="https://mushikui.trasta.dev/" />
-          </div>
-          <div class="page-footer" xyz="fade bottom ease-in-out delay-10">
-            <div class="footer-logo xyz-nested" xyz="fade left ease-in-out delay-10"></div>
-            <div class="footer-right" xyz="fade up stagger ease-in-out delay-10">
-              <Card class="xyz-nested" url="https://sample-front-weld.vercel.app/" />
+      <div>
+        <div class="page-hero" xyz="fade small stagger ease-out-back">
+          <v-avatar class="xyz-nested">
+            <img src="https://avatars.githubusercontent.com/u/56793204?s=96&v=4" alt="Urturn">
+          </v-avatar>
+          <p class="hero-text xyz-nested">Hi! I'm urturn.</p>
+          <p class="hero-text xyz-nested">I'm a Student of Titech.</p>
+          <p class="hero-text xyz-nested">I contributed to the following projects as a programmer.</p>
+        </div>
+        <v-row no-gutters>
+          <v-col cols="12" sm="4" class="page-wrap">
+            <div class="xyz-nested" xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+              <Card url="https://20jun01.github.io/topublish/" />
             </div>
-          </div>
-        </v-col>
-      </v-row>
+            <div class="xyz-nested"  xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+              <Card url="https://mushikui.trasta.dev/" />
+            </div>
+
+            <div class="xyz-nested"  xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+              <Card url="https://sample-front-weld.vercel.app/" />
+            </div>
+          </v-col>
+        </v-row>
+      </div>
     </XyzTransition>
   </v-container>
 </template>
