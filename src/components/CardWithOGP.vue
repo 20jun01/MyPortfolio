@@ -1,9 +1,9 @@
 <template>
     <div>
-        <v-card hover :href=url outlined color="transparent" v-if=url>
+        <v-card shaped hover :href=url outlined color="transparent" v-if=url>
             <v-img :src="image" :aspect-ratio="16 / 9" v-if=image></v-img>
             <v-card-title v-if=title>{{ title }}</v-card-title>
-            <v-card-subtitle v-if=description>{{ description }}</v-card-subtitle>
+            <v-card-subtitle v-if=description style="color: #B1D4E0;">{{ description }}</v-card-subtitle>
         </v-card>
     </div>
 </template>
@@ -29,14 +29,7 @@
 
 .v-card__title {
     font-size: 1.5rem;
-}
-
-.v-card__subtitle {
-    font-size: 1rem;
-}
-
-.v-card__text {
-    font-size: 0.875rem;
+    color: #D0F6F6;
 }
 </style>
 

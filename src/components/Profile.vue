@@ -41,5 +41,7 @@ export default {
 }
 </script>
 <style scoped>
-
+.hero-text{
+  color: #B1D4E0;
+}
 </style>
