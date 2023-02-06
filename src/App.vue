@@ -1,8 +1,6 @@
 <template>
   <v-app>
     <router-view />
-    <div class="xyz-in" xyz="fade up big">I will animate in!</div>
-    <div class="xyz-out" xyz="fade up big">I will animate out!</div>
   </v-app>
 </template>
 
