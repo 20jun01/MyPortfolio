@@ -1,7 +1,9 @@
 <template>
-  <div id="app">
+  <v-app>
     <router-view />
-  </div>
+    <div class="xyz-in" xyz="fade up big">I will animate in!</div>
+    <div class="xyz-out" xyz="fade up big">I will animate out!</div>
+  </v-app>
 </template>
 
 <style lang="scss">
