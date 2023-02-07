@@ -10,12 +10,14 @@
           </v-col>
         </v-row>
         <v-row class="page-hero" xyz="fade small stagger ease-out-back">
-          <v-card class="d-inline-flex justify-center mb-6 greet xyz-nested"
-            flat tile>
+          <v-card class="d-inline-flex justify-center mb-6 greet xyz-nested" flat tile>
             <div class="hero-text">
-              Hi!I'm&nbsp; 
+              Hi! I'm&nbsp;
             </div>
-            <div class="hero-text greet-name">urturn!</div>
+            <XyzTransition duration="auto">
+              <div class="hero-text greet-name" @click="rotate" appear="false"
+                xyz="flip-down duration-10" v-if="!isAnim">urturn!</div>
+            </XyzTransition>
           </v-card>
           <v-col cols="12" class="hero-text xyz-nested">I'm a Student of Titech.</v-col>
           <v-col cols="12" class="hero-text xyz-nested">I contributed to the following projects as a programmer.</v-col>
@@ -45,6 +47,30 @@ export default {
   name: 'HomeView',
   components: {
     Card
+  },
+  data() {
+    return {
+      isAnim: false,
+      interval: null
+    }
+  },
+  methods: {
+    rotate() {
+      console.log('rotate')
+      if (this.isAnim === true || this.interval !== null) {
+        return
+      }
+      // animation start
+      this.isAnim = true
+      // set interval
+      this.interval = setInterval(() => {
+        // animation stop
+        this.isAnim = false
+        // clear interval
+        clearInterval(this.interval)
+        this.interval = null
+      }, 1100)
+    }
   }
 }
 </script>
@@ -53,7 +79,7 @@ export default {
   color: #B1D4E0;
 }
 
-.greet{
+.greet {
   background-color: transparent;
 }
 </style>
