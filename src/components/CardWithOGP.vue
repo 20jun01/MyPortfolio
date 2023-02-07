@@ -30,6 +30,7 @@
 .v-card__title {
     font-size: 1.5rem;
     color: #D0F6F6;
+    font-family:  fantasy, serif,'Arial Narrow', Arial, sans-serif !important;
 }
 </style>
 
