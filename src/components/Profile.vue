@@ -79,6 +79,7 @@ export default {
 <style scoped>
 .hero-text {
   color: #B1D4E0;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .greet {
