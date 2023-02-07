@@ -9,30 +9,32 @@
             </v-avatar>
           </v-col>
         </v-row>
-        <v-row class="page-hero" xyz="fade small stagger ease-out-back">
-          <v-card class="d-inline-flex justify-center mb-6 greet xyz-nested" flat tile>
+        <v-row class="page-hero" xyz="fade small stagger ease-out-back delay-2">
+          <v-card class="d-inline-flex justify-center mb-2 greet xyz-nested" flat tile>
             <div class="hero-text">
               Hi! I'm&nbsp;
             </div>
             <XyzTransition duration="auto">
-              <div class="hero-text greet-name" @click="rotate" appear="false"
-                xyz="flip-down duration-10" v-if="!isAnim">urturn!</div>
+              <div class="hero-text greet-name" @click="rotate" appear="false" xyz="flip-down duration-10"
+                v-if="!isAnim">urturn!</div>
             </XyzTransition>
           </v-card>
           <v-col cols="12" class="hero-text xyz-nested">I'm a Student of Titech.</v-col>
           <v-col cols="12" class="hero-text xyz-nested">I contributed to the following projects as a programmer.</v-col>
-          <v-col cols="12" xl="2" lg="4" md="4" class="page-wrap">
-            <div class="xyz-nested" xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+        </v-row>
+        <v-row class="page-hero" xyz="fade flip-down stagger duration-10 delay-4 ease-out-back">
+          <v-col class="xyz-nested page-wrap" cols="12" xl="2" lg="4" md="4">
+            <div>
               <Card url="https://20jun01.github.io/topublish/" />
             </div>
           </v-col>
-          <v-col cols="12" xl="2" lg="4" md="4" class="page-wrap">
-            <div class="xyz-nested" xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+          <v-col cols="12" xl="2" lg="4" md="4" class="xyz-nested page-wrap">
+            <div>
               <Card url="https://mushikui.trasta.dev/" />
             </div>
           </v-col>
-          <v-col cols="12" xl="2" lg="4" md="4" class="page-wrap">
-            <div class="xyz-nested" xyz="fade flip-down stagger duration-10 delay-2 ease-out-back">
+          <v-col cols="12" xl="2" lg="4" md="4" class="xyz-nested page-wrap">
+            <div>
               <Card url="https://sample-front-weld.vercel.app/" />
             </div>
           </v-col>
