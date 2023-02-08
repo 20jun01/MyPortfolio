@@ -1,8 +1,20 @@
 <template>
   <v-app>
+    <Header />
     <router-view />
   </v-app>
 </template>
+
+<script>
+import Header from '@/components/HeaderComponent.vue'
+
+export default {
+  name: 'HomeView',
+  components: {
+    Header
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -12,18 +24,5 @@
   text-align: center;
   color: #2c3e50;
   background-color: transparent;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
