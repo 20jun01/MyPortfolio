@@ -17,7 +17,7 @@ export default {
         return {
             links: [
                 { name: "HOME", href: "/" },
-                { name: "SKILLS", href: "/skills" },
+                { name: "SKILL", href: "/skill" },
                 { name: "HOBBY", href: "/hobby" },
                 { name: "SOCIAL", href: "/social" },
             ]
