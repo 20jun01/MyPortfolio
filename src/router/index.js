@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import SkillsView from '@/views/SkillsView.vue'
+import HobbyView from '@/views/HobbyView.vue'
+import SocialView from '@/views/SocialView.vue'
 
 Vue.use(VueRouter)
 
@@ -10,6 +13,21 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+  {
+    path: '/skills',
+    name: 'skills',
+    component: SkillsView
+  },
+  {
+    path: '/hobby',
+    name: 'hobby',
+    component: HobbyView
+  },
+  {
+    path: '/social',
+    name: 'social',
+    component: SocialView
+  }
 ]
 
 const router = new VueRouter({

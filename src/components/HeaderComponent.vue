@@ -20,7 +20,7 @@ export default {
                 { name: "HOME", href: "/" },
                 { name: "SKILLS", href: "/skills" },
                 { name: "HOBBY", href: "/hobby" },
-                { name: "CONTACT", href: "/contact" },
+                { name: "SOCIAL", href: "/social" },
             ]
         }
     }
