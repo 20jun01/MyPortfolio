@@ -7,7 +7,7 @@
         </v-row>
         <v-row dense>
             <XyzTransition appear xyz="origin-center fade stagger">
-                <v-col cols="4">
+                <v-col cols="12" xl="4" lg="4" md="4">
                     <v-col cols="12" class="text-title">
                         Games
                     </v-col>
@@ -59,7 +59,7 @@
                 </v-col>
             </XyzTransition>
             <XyzTransition appear xyz="origin-center fade stagger delay-4">
-                <v-col cols="4">
+                <v-col cols="12" xl="4" lg="4" md="4">
                     <v-row>
                         <v-col cols="12" class="text-title">
                             Music
@@ -90,7 +90,7 @@
                 </v-col>
             </XyzTransition>
             <XyzTransition appear xyz="origin-center fade stagger delay-8">
-                <v-col cols="4">
+                <v-col cols="12" xl="4" lg="4" md="4">
                     <v-row>
                         <v-col cols="12" class="text-title">
                             Anime
