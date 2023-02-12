@@ -4,6 +4,8 @@
             <v-col cols="12" class="text-center">
                 <h1>Social</h1>
             </v-col>
+            </v-row>
+            <v-row no-gutters>
             <v-col cols="6" class="text-center">
                 <v-btn icon href="https://github.com/20jun01"><font-awesome-icon
                         icon="fa-brands fa-github fa-2xl" /></v-btn>

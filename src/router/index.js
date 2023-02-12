@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SkillsView from '@/views/SkillsView.vue'
-import HobbyView from '@/views/HobbyView.vue'
+import LikesView from '@/views/LikesView.vue'
 import SocialView from '@/views/SocialView.vue'
 
 Vue.use(VueRouter)
@@ -19,9 +19,9 @@ const routes = [
     component: SkillsView
   },
   {
-    path: '/hobby',
-    name: 'hobby',
-    component: HobbyView
+    path: '/likes',
+    name: 'likes',
+    component: LikesView
   },
   {
     path: '/social',

@@ -4,6 +4,8 @@
             <v-col cols="12" class="text-center">
                 <h1>Skills</h1>
             </v-col>
+        </v-row>
+        <v-row no-gutters>
             <v-col cols="6" class="text-center">
                 Program
             </v-col>
