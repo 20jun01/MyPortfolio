@@ -1,27 +1,23 @@
 <template>
     <v-container>
-        <v-row no-gutters>
-            <v-col cols="12" class="text-center">
-                <h1>Skills</h1>
-            </v-col>
-        </v-row>
-        <v-row no-gutters>
-            <v-col cols="6" class="text-center">
-                Program
-            </v-col>
-            <v-col cols="1">
-                <i class="devicon-go-plain text-center"></i>
-            </v-col>
-            <v-col cols="1">
-                <i class="devicon-python-plain text-center"></i>
-            </v-col>
-            <v-col cols="1">
-                <i class="devicon-csharp-plain colored text-center"></i>
-            </v-col>
-            <v-col cols="1">
-                <i class="devicon-vuetify-line colored text-center"></i>
-            </v-col>
-        </v-row>
+
+        <XyzTransition appear duration="auto">
+            <div>
+                <v-row no-gutters>
+                    <v-col cols="12" class="text-center">
+                        <h1>Skills</h1>
+                    </v-col>
+                </v-row>
+                <v-row no-gutters>
+                    <v-col cols="6" class="text-center">
+                        Program
+                    </v-col>
+                    <v-col class="xyz-nested" v-for="icontext in languages" :key="icontext" cols="1" xyz="fade down stagger">
+                        <i :class="icontext"></i>
+                    </v-col>
+                </v-row>
+            </div>
+        </XyzTransition>
     </v-container>
 </template>
 <script>
@@ -29,6 +25,7 @@ export default {
     name: "SkillView",
     data() {
         return {
+            languages: ["devicon-go-plain text-center", "devicon-python-plain text-center", "devicon-csharp-plain colored text-center", "devicon-vuetify-line colored text-center"]
         }
     }
 }
