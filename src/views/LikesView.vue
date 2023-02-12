@@ -8,9 +8,11 @@
         <v-row dense>
             <XyzTransition appear xyz="origin-center fade stagger">
                 <v-col cols="12" xl="4" lg="4" md="4">
+                    <v-row>
                     <v-col cols="12" class="text-title">
                         Games
                     </v-col>
+                </v-row>
                     <v-col cols="12" class="text-description">
                         (play more than 6 months)
                     </v-col>
@@ -120,9 +122,9 @@ export default {
                 { name: "And More More", description: "" }
             ],
             musics: [
-                { genre: "VOCALOID", musics: ["DAYBREAK FRONTLINE", "透明エレジー", "Calc.", "And More More"] },
-                { genre: "J-POP", musics: ["ドライフラワー", "Mela!", "青と夏", "And More More"] },
-                { genre: "Anime Song", musics: ["Catch the Moment", "this game", "サクラミツツキ", "And More More"] },
+                { genre: "VOCALOID", musics: ["透明エレジー", "DAYBREAK FRONTLINE", "Calc.", "And More More"] },
+                { genre: "J-POP", musics: ["青と夏", "ドライフラワー", "Mela!", "And More More"] },
+                { genre: "Anime Song", musics: ["サクラミツツキ", "Catch the Moment", "this game", "And More More"] },
             ],
         }
     }
