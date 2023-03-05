@@ -2,6 +2,7 @@
     <div>
         <v-card shaped hover :href=url outlined color="transparent" v-if=url>
             <v-img :src="image" :aspect-ratio="16 / 9" v-if=image></v-img>
+            <v-img :src="image_url" :aspect-ratio="16 / 9" v-else></v-img>
             <v-card-title v-if=title>{{ title }}</v-card-title>
             <v-card-subtitle v-if=description style="color: #B1D4E0;">{{ description }}</v-card-subtitle>
         </v-card>
@@ -39,14 +40,18 @@ export default {
     props: {
         url: {
             type: String,
-            required: true
-        }
+            required: true,
+        },
+        image: {
+            type: String,
+            required: false,
+        },
     },
     data() {
         return {
             title: '',
             description: '',
-            image: '',
+            image_url: '',
         }
     },
     mounted() {
@@ -63,8 +68,8 @@ export default {
                         this.title = v.getAttribute("content")
                     } else if (prop === 'og:description') {
                         this.description = v.getAttribute("content")
-                    } else if (prop === 'og:image') {
-                        this.image = v.getAttribute("content")
+                    } else if (prop === 'og:image' && !this.image) {
+                        this.image_url = v.getAttribute("content")
                     }
                 })
             })

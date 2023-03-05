@@ -15,8 +15,8 @@
               Hi! I'm&nbsp;
             </div>
             <XyzTransition duration="auto">
-              <div class="hero-text greet-name" @click="rotate" appear="false" xyz="flip-down duration-10"
-                v-if="!isAnim">urturn!</div>
+              <div class="hero-text greet-name" @click="rotate" appear="false" xyz="flip-down duration-10" v-if="!isAnim">
+                urturn!</div>
             </XyzTransition>
           </v-card>
           <v-col cols="12" class="hero-text xyz-nested">I'm a Student of Titech.</v-col>
@@ -25,7 +25,7 @@
         <v-row class="page-hero" xyz="fade flip-down stagger duration-10 delay-4 ease-out-back">
           <v-col class="xyz-nested page-wrap" cols="12" xl="2" lg="4" md="4">
             <div>
-              <Card url="https://20jun01.github.io/topublish/" />
+              <Card url="https://20jun01.github.io/topublish/" image="/images/OGPImages/OGP_chain.webp" />
             </div>
           </v-col>
           <v-col cols="12" xl="2" lg="4" md="4" class="xyz-nested page-wrap">
@@ -35,7 +35,7 @@
           </v-col>
           <v-col cols="12" xl="2" lg="4" md="4" class="xyz-nested page-wrap">
             <div>
-              <Card url="https://sample-front-weld.vercel.app/" />
+              <Card url="https://sample-front-weld.vercel.app/" image="/images/OGPImages/OGP_eat.webp" />
             </div>
           </v-col>
         </v-row>
