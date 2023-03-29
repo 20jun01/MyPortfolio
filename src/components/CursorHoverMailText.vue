@@ -1,51 +1,28 @@
 <template>
-    <v-tooltip v-model="tooltip" bottom>
-        <template v-slot:activator="{ on }">
-            <v-btn v-on="on" @mouseover="updateTooltipText" @mouseleave="resetTooltipText">{{ mail }}</v-btn>
-        </template>
-        <span>{{ tooltipText }}</span>
-    </v-tooltip>
+    <div>
+        <v-tooltip bottom>
+            <template v-slot:activator="{ on }">
+                <v-btn text class="custom-text" v-on="on">Hover me</v-btn>
+            </template>
+            <span class="tooltip-custom">This is a tooltip</span>
+        </v-tooltip>
+    </div>
 </template>
+  
+<style>
+.custom-text {
+    font-size: 1.5rem;
+    color: #5c6bc0;
+}
 
-<script>
-export default {
-    data() {
-        return {
-            tooltip: false,
-            tooltipText: '',
-            position: {}
-        };
-    },
-    methods: {
-        updateTooltipText() {
-            this.tooltipText = "Replace [at] to @";
-        },
-        resetTooltipText() {
-            
-        },
-        updatePosition(event) {
-            this.position.x = event.clientX;
-            this.position.y = event.clientY;
-        }
-    },
-    props: {
-        mail: {
-            type: String,
-            required: true,
-        }
-    },
-    watch: {
-        position() {
-            const tooltip = document.querySelector('.v-tooltip__content');
-            tooltip.style.left = this.position.x + 20 + 'px';
-            tooltip.style.top = this.position.y + 20 + 'px';
-        }
-    },
-    beforeUnmount() {
-        document.removeEventListener('mousemove', this.updatePosition);
-    },
-    mounted() {
-        document.addEventListener('mousemove', this.updatePosition);
-    }
-};
-</script>
+.tooltip-custom {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    padding: 0;
+}
+
+.tooltip-custom+.v-tooltip__arrow {
+    display: none;
+}
+</style>

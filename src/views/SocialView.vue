@@ -20,7 +20,7 @@
                 <a class="link03" href="https://atcoder.jp/users/urturn">urturn</a>
             </v-col>
             <v-col cols="6" class="text-center">
-                <v-btn icon href="mailto:lunchmaru250@gmail.com"><font-awesome-icon
+                <v-btn icon><font-awesome-icon
                         icon="fa-solids fa-envelope" /></v-btn>
             </v-col>
             <v-col cols="6" class="text-center">
