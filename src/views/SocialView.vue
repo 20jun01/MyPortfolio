@@ -24,17 +24,22 @@
                         icon="fa-solids fa-envelope" /></v-btn>
             </v-col>
             <v-col cols="6" class="text-center">
-                <a class="link03" href="mailto:lunchmaru250@gmail.com">lunchmaru250@gmail.com</a>
+                <HoverMailText mail="lunchmaru250[at]gmail.com"></HoverMailText>
             </v-col>
         </v-row>
     </v-container>
 </template>
 <script>
+import HoverMailText from '@/components/CursorHoverMailText.vue'
+
 export default {
     name: "SocialView",
     data() {
         return {
         }
+    },
+    components: {
+        HoverMailText
     }
 }
 </script>
