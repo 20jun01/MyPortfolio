@@ -2,19 +2,33 @@
     <div>
         <v-tooltip bottom>
             <template v-slot:activator="{ on }">
-                <v-btn text class="custom-text" v-on="on">Hover me</v-btn>
+                <v-btn text :style="customText" v-on="on">{{ mail }}</v-btn>
             </template>
-            <span class="tooltip-custom">This is a tooltip</span>
+            <span class="tooltip-custom">Replace [AT] to @</span>
         </v-tooltip>
     </div>
 </template>
   
-<style>
-.custom-text {
-    font-size: 1.5rem;
-    color: #5c6bc0;
+<script>
+export default {
+    computed: {
+        customText() {
+            return {
+                fontSize: '1.5rem',
+                color: `#B1D4E0`,
+            }
+        },
+    },
+    props: {
+        mail: {
+            type: String,
+            required: true,
+        },
+    },
 }
-
+</script>
+  
+<style>
 .tooltip-custom {
     background-color: transparent;
     color: inherit;
