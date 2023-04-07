@@ -9,10 +9,10 @@
             <XyzTransition appear xyz="origin-center fade stagger">
                 <v-col cols="12" xl="4" lg="4" md="4">
                     <v-row>
-                    <v-col cols="12" class="text-title">
-                        Games
-                    </v-col>
-                </v-row>
+                        <v-col cols="12" class="text-title">
+                            Games
+                        </v-col>
+                    </v-row>
                     <v-col cols="12" class="text-description">
                         (play more than 6 months)
                     </v-col>
@@ -98,6 +98,24 @@
                             Anime
                         </v-col>
                     </v-row>
+                    <ul>
+                        <li v-for="animes in animeSum" :key="animes.period">
+                            <v-col cols="12" class="text-main">
+                                {{ animes.period }}
+                            </v-col>
+                            <ul>
+                                <XyzTransitionGroup appear xyz="fade left stagger-2 thick short delay-9">
+                                    <li v-for="anime in animes.animes" :key="anime.name">
+                                        <v-row>
+                                            <v-col cols="12" class="text-mid">
+                                                {{ anime.name }}
+                                            </v-col>
+                                        </v-row>
+                                    </li>
+                                </XyzTransitionGroup>
+                            </ul>
+                        </li>
+                    </ul>
                 </v-col>
             </XyzTransition>
         </v-row>
@@ -125,6 +143,10 @@ export default {
                 { genre: "VOCALOID", musics: ["透明エレジー", "DAYBREAK FRONTLINE", "Calc.", "And More More"] },
                 { genre: "J-POP", musics: ["青と夏", "ドライフラワー", "Mela!", "And More More"] },
                 { genre: "Anime Song", musics: ["サクラミツツキ", "Catch the Moment", "this game", "And More More"] },
+            ],
+            animeSum: [
+                { period: "Recently", animes: [{ name: "ぼっち・ざ・ろっく！", link: "" },] },
+                { period: "Before", animes: [{ name: "ノーゲーム・ノーライフ", link: "" },] },
             ],
         }
     }

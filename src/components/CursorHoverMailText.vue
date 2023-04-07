@@ -8,7 +8,7 @@
         </v-tooltip>
     </div>
 </template>
-  
+
 <script>
 export default {
     computed: {
@@ -27,7 +27,7 @@ export default {
     },
 }
 </script>
-  
+
 <style>
 .tooltip-custom {
     background-color: transparent;
