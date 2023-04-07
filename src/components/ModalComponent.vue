@@ -1,18 +1,20 @@
 <template>
-    <v-dialog v-model="dialog" max-width="80%">
+    <v-dialog v-model="dialog">
         <v-card class="centered-dialog">
-            <v-card-actions class="close-btn">
-                <v-spacer></v-spacer>
-                <v-btn text icon @click="closeModal">
-                    <v-icon>mdi-close</v-icon>
-                </v-btn>
-            </v-card-actions>
-            <v-img :src="image" :aspect-ratio="16 / 9" contain class="dialog-image"></v-img>
+            <div class="image-container">
+                <v-img :src="image" :aspect-ratio="16 / 9" contain class="dialog-image"></v-img>
+                <v-card-actions class="close-btn">
+                    <v-btn text icon @click="closeModal">
+                        <v-icon>mdi-close</v-icon>
+                    </v-btn>
+                </v-card-actions>
+            </div>
             <v-card-title class="headline primary--text">{{ title }}</v-card-title>
             <v-card-subtitle class="grey--text">{{ description }}</v-card-subtitle>
         </v-card>
     </v-dialog>
 </template>
+
 
 <script>
 export default {
@@ -78,15 +80,21 @@ export default {
 }
 
 /* layout center */
-.centered-dialog {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.image-container {
+    position: relative;
+    width: 100%;
 }
 
 .close-btn {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.centered-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 </style>
