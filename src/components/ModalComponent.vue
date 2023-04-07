@@ -1,15 +1,15 @@
 <template>
-    <v-dialog v-model="dialog">
+    <v-dialog v-model="dialog" max-width="80%">
         <v-card class="centered-dialog">
-            <v-card-actions>
+            <v-card-actions class="close-btn">
                 <v-spacer></v-spacer>
                 <v-btn text icon @click="closeModal">
                     <v-icon>mdi-close</v-icon>
                 </v-btn>
             </v-card-actions>
+            <v-img :src="image" :aspect-ratio="16 / 9" contain class="dialog-image"></v-img>
             <v-card-title class="headline primary--text">{{ title }}</v-card-title>
             <v-card-subtitle class="grey--text">{{ description }}</v-card-subtitle>
-            <v-img :src="image" :aspect-ratio="16 / 9" contain></v-img>
         </v-card>
     </v-dialog>
 </template>
@@ -66,10 +66,6 @@ export default {
     max-height: 80%;
 }
 
-.v-card {
-    margin: 0;
-}
-
 .v-card__title {
     font-size: 24px;
     font-weight: bold;
@@ -81,10 +77,16 @@ export default {
     line-height: 1.4;
 }
 
+/* layout center */
 .centered-dialog {
-    display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    height: 80%;
+    align-items: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 </style>

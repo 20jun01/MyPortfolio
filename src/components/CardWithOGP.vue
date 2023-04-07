@@ -1,7 +1,7 @@
 <template>
     <div>
         <template>
-            <v-card v-on:click="showModal = true" shaped hover outlined color="transparent" v-if="url" v-bind="props">
+            <v-card v-on:click="showModal = true" shaped hover outlined color="transparent" v-if="url">
                 <div class="img-container">
                 <v-img :src="image" :aspect-ratio="16 / 9" v-if="image"></v-img>
                 <v-img :src="image_url" :aspect-ratio="16 / 9" v-else></v-img>
@@ -37,7 +37,7 @@
 
 .v-card .img-container {
     transform: scale(0.95, 0.95);
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .v-card__title {
@@ -66,11 +66,11 @@ export default {
             title: '',
             description: '',
             image_url: '',
-            showModal: false // モーダルの表示状態を管理するデータ
+            showModal: false,
         }
     },
     components: {
-        ModalComponent // モーダル用のコンポーネントを登録
+        ModalComponent
     },
     mounted() {
         this.$nextTick(() => {
