@@ -1,6 +1,5 @@
 <template>
     <v-container>
-
         <XyzTransition appear duration="auto">
             <div>
                 <v-row no-gutters>
@@ -14,6 +13,14 @@
                     </v-col>
                     <v-col class="xyz-nested" v-for="icontext in languages" :key="icontext" cols="1" xyz="fade down stagger">
                         <i :class="icontext"></i>
+                    </v-col>
+                </v-row>
+                <v-row>
+                    <v-col cols="6" class="text-center">
+                        TOEIC
+                    </v-col>
+                    <v-col cols="6" class="text-left xyz-nested" xyz="fade down stagger">
+                        885(2020/12)
                     </v-col>
                 </v-row>
             </div>
@@ -35,5 +42,12 @@ export default {
     color: #B1D4E0 !important;
     font-size: 2em !important;
     font-family: 'Courier New', Courier, monospace;
+}
+
+.text-left {
+    color: #B1D4E0 !important;
+    font-size: 1.5em !important;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
 }
 </style>
