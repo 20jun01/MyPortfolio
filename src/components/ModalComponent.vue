@@ -1,0 +1,90 @@
+<template>
+    <v-dialog v-model="dialog">
+        <v-card class="centered-dialog">
+            <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn text icon @click="closeModal">
+                    <v-icon>mdi-close</v-icon>
+                </v-btn>
+            </v-card-actions>
+            <v-card-title class="headline primary--text">{{ title }}</v-card-title>
+            <v-card-subtitle class="grey--text">{{ description }}</v-card-subtitle>
+            <v-img :src="image" :aspect-ratio="16 / 9" contain></v-img>
+        </v-card>
+    </v-dialog>
+</template>
+
+<script>
+export default {
+    props: {
+        url: {
+            type: String,
+            required: true
+        },
+        image: {
+            type: String,
+            required: false
+        },
+        title: {
+            type: String,
+            required: false
+        },
+        description: {
+            type: String,
+            required: false
+        },
+        value: {
+            type: Boolean,
+            default: false
+        }
+    },
+    data() {
+        return {
+            dialog: this.value
+        };
+    },
+    methods: {
+        closeModal() {
+            this.$emit('close');
+        }
+    },
+    watch: {
+        dialog(newVal) {
+            this.$emit('input', newVal);
+        },
+        value(newVal) {
+            this.dialog = newVal;
+        }
+    },
+};
+</script>
+
+<style scoped>
+.v-dialog__content {
+    padding: 0;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.v-card {
+    margin: 0;
+}
+
+.v-card__title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.v-card__subtitle {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.centered-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+</style>
