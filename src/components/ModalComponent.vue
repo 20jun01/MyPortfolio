@@ -2,15 +2,22 @@
     <v-dialog v-model="dialog" max-width="70%" hide-overlay>
         <v-card class="centered-dialog" color="transparent">
             <div class="image-container">
-                <v-img :src="image" :aspect-ratio="16 / 9" contain class="dialog-image"></v-img>
+                <v-img :src="image" :aspect-ratio="16 / 9" contain class="dialog-image" v-if="image"></v-img>
+                <v-img :src="image_url" :aspect-ratio="16 / 9" contain class="dialog-image" v-else></v-img>
                 <v-card-actions class="close-btn">
                     <v-btn text icon @click="closeModal">
-                        <v-icon>mdi-close</v-icon>
+                        <v-icon color="black">mdi-close</v-icon>
                     </v-btn>
                 </v-card-actions>
             </div>
-            <v-card-title class="headline primary--text">{{ title }}</v-card-title>
-            <v-card-subtitle class="grey--text">{{ description }}</v-card-subtitle>
+            <v-card-title class="headline">{{ title }}</v-card-title>
+            <v-spacer></v-spacer>
+            <v-card-subtitle style="color: #B1D4E0;">{{ short_description }}</v-card-subtitle>
+            <v-spacer></v-spacer>
+            <v-card-text style="color: #B1D4E0">
+                link: <a :href="url" target="_blank" class="link03">{{ url }}</a>
+                {{ long_description }}
+            </v-card-text>
         </v-card>
     </v-dialog>
 </template>
@@ -27,11 +34,19 @@ export default {
             type: String,
             required: false
         },
+        image_url: {
+            type: String,
+            required: false
+        },
         title: {
             type: String,
             required: false
         },
-        description: {
+        short_description: {
+            type: String,
+            required: false
+        },
+        long_description: {
             type: String,
             required: false
         },
@@ -63,17 +78,11 @@ export default {
 
 <style scoped>
 .v-card__title {
-    font-size: 24px;
     font-weight: bold;
     line-height: 1.2;
+    color: #D0F6F6;
 }
 
-.v-card__subtitle {
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-/* layout center */
 .v-dialog__content {
     padding: 0;
 }
@@ -96,4 +105,29 @@ export default {
     top: 0;
     right: 0;
 }
+
+.link03 {
+    color: #B1D4E0;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.link03::after {
+    content: "";
+    width: 0%;
+    height: 1px;
+    background-color: #B1D4E0;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .25s linear;
+}
+
+.link03:hover::after {
+    width: 100%;
+}
+
 </style>

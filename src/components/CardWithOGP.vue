@@ -3,16 +3,16 @@
         <template>
             <v-card v-on:click="showModal = true" shaped hover outlined color="transparent" v-if="url">
                 <div class="img-container">
-                <v-img :src="image" :aspect-ratio="16 / 9" v-if="image"></v-img>
-                <v-img :src="image_url" :aspect-ratio="16 / 9" v-else></v-img>
-            </div>
+                    <v-img :src="image" :aspect-ratio="16 / 9" v-if="image"></v-img>
+                    <v-img :src="image_url" :aspect-ratio="16 / 9" v-else></v-img>
+                </div>
                 <v-card-title v-if="title">{{ title }}</v-card-title>
                 <v-card-subtitle v-if="description" style="color: #B1D4E0;">{{ description }}</v-card-subtitle>
             </v-card>
         </template>
 
-        <modal-component :url="url" :image="image" :title="title" :description="description"
-            v-model="showModal" @close="showModal = false"></modal-component>
+        <modal-component :url="url" :image="image" :image_url="image_url" :title="title" :short_description="description"
+            :long_description="long_description" v-model="showModal" @close="showModal = false"></modal-component>
     </div>
 </template>
 
@@ -30,7 +30,7 @@
 .v-card:hover .img-container {
     transform: scale(1.0, 1.0);
     aspect-ratio: 16 / 9;
-    
+
     object-fit: none;
     color: transparent;
 }
@@ -57,6 +57,10 @@ export default {
             required: true,
         },
         image: {
+            type: String,
+            required: false,
+        },
+        long_description: {
             type: String,
             required: false,
         },
