@@ -1,6 +1,6 @@
 <template>
-    <v-dialog v-model="dialog">
-        <v-card class="centered-dialog">
+    <v-dialog v-model="dialog" max-width="70%" hide-overlay>
+        <v-card class="centered-dialog" color="transparent">
             <div class="image-container">
                 <v-img :src="image" :aspect-ratio="16 / 9" contain class="dialog-image"></v-img>
                 <v-card-actions class="close-btn">
@@ -62,12 +62,6 @@ export default {
 </script>
 
 <style scoped>
-.v-dialog__content {
-    padding: 0;
-    max-width: 80%;
-    max-height: 80%;
-}
-
 .v-card__title {
     font-size: 24px;
     font-weight: bold;
@@ -80,6 +74,18 @@ export default {
 }
 
 /* layout center */
+.v-dialog__content {
+    padding: 0;
+}
+
+.centered-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
 .image-container {
     position: relative;
     width: 100%;
@@ -89,12 +95,5 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-}
-
-.centered-dialog {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 </style>
