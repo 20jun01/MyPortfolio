@@ -1,18 +1,13 @@
 <template>
     <div>
         <template>
-            <v-card v-on:click="showModal = true" shaped hover outlined color="transparent" v-if="url">
-                <div class="img-container">
-                    <v-img :src="image" :aspect-ratio="16 / 9" v-if="image"></v-img>
-                    <v-img :src="image_url" :aspect-ratio="16 / 9" v-else></v-img>
-                </div>
-                <v-card-title v-if="title">{{ title }}</v-card-title>
-                <v-card-subtitle v-if="description" style="color: #B1D4E0;">{{ description }}</v-card-subtitle>
+            <v-card shaped hover :href=link outlined color="transparent" v-if=link>
+                <v-img class="img-container" :src="imageSource" :aspect-ratio="16 / 9"></v-img>
+
+                <v-card-title v-if=titleSource>{{ titleSource }}</v-card-title>
+                <v-card-subtitle v-if=description style="color: #B1D4E0;">{{ description }}</v-card-subtitle>
             </v-card>
         </template>
-
-        <modal-component :url="url" :image="image" :image_url="image_url" :title="title" :short_description="description"
-            :long_description="long_description" v-model="showModal" @close="showModal = false"></modal-component>
     </div>
 </template>
 
@@ -46,17 +41,22 @@
     font-family: fantasy, serif, 'Arial Narrow', Arial, sans-serif !important;
 }
 </style>
-
 <script>
-import ModalComponent from './ModalComponent.vue';
-
 export default {
     props: {
         url: {
             type: String,
-            required: true,
+            required: false,
+        },
+        url_with_no_ogp: {
+            type: String,
+            required: false,
         },
         image: {
+            type: String,
+            required: false,
+        },
+        title: {
             type: String,
             required: false,
         },
@@ -67,33 +67,43 @@ export default {
     },
     data() {
         return {
-            title: '',
+            title_: '',
             description: '',
             image_url: '',
             showModal: false,
+            imageSource: '',
+            titleSource: '',
+            link: '',
         }
-    },
-    components: {
-        ModalComponent
     },
     mounted() {
         this.$nextTick(() => {
-            const url = this.url
+            this.link = this.url || this.url_with_no_ogp;
+            this.description = this.long_description || this.description;
 
-            fetch(url).then(res => res.text()).then(text => {
+            if (this.url_with_no_ogp) {
+                this.imageSource = this.image || this.image_url;
+                this.titleSource = this.title || this.title_;
+                return;
+            }
+            fetch(this.url).then(res => res.text()).then(text => {
                 const el = new DOMParser().parseFromString(text, "text/html")
                 const headEls = (el.head.children)
                 Array.from(headEls).map(v => {
                     const prop = v.getAttribute('property')
                     if (!prop) return;
                     if (prop === 'og:title') {
-                        this.title = v.getAttribute("content")
+                        this.title_ = v.getAttribute("content")
                     } else if (prop === 'og:description') {
                         this.description = v.getAttribute("content")
                     } else if (prop === 'og:image' && !this.image) {
                         this.image_url = v.getAttribute("content")
                     }
                 })
+                this.imageSource = this.image || this.image_url;
+                this.titleSource = this.title || this.title_;
+            }).catch(() => {
+                this.imageSource = this.image || this.image_url;
             })
         })
     }
