@@ -48,6 +48,11 @@
               <Card url_with_no_ogp="http://no9.co.jp" image="/images/OGPImages/OGP_no_image.png" title="ナンバーナイン" long_description="インターンとしてサーバーサイドの開発をしている(2022/12~)"/>
             </div>
           </v-col>
+          <v-col cols="12" xl="2" lg="4" md="4" class="xyz-nested page-wrap">
+            <div>
+              <Card url="https://my-portfolio-20jun01.vercel.app/" />
+            </div>
+          </v-col>
         </v-row>
       </div>
     </XyzTransition>
